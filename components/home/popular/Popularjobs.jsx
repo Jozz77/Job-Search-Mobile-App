@@ -4,8 +4,8 @@ import { View, Text, TouchableOpacity, ActivityIndicator, FlatList } from "react
 import styles from "./popularjobs.style";
 import { useRouter } from "expo-router";
 import { COLORS, SIZES } from "../../../constants";
-import PopularJobCard from "./PopularJobCard";
 import usefetch from "../../../hook/usefetch";
+import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const Popularjobs = () => {
   // console.log("Rendering Popularjobs");
@@ -43,7 +43,7 @@ const Popularjobs = () => {
           <FlatList 
           data={data}
           renderItem={({item}) => (
-            <PopularJobCard item={item} />
+            <PopularJobCard item={item} handleCardPress = {() => router.push(`job-details/${item?.job_id}`)} />
           )}
           keyExtractor={item => item.job_id}
           contentContainerStyle={{ columnGap: SIZES.medium}}

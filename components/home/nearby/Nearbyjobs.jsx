@@ -5,7 +5,7 @@ import styles from "./nearbyjobs.style";
 import { useRouter } from "expo-router";
 import { COLORS } from "../../../constants";
 import usefetch from "../../../hook/usefetch";
-import NearbyJobsCard from "./NearbyJobsCard";
+import NearbyJobsCard from "../../common/cards/nearby/NearbyJobCard";
 
 const Nearbyjobs = () => {
   // console.log("Rendering Popularjobs");
@@ -16,7 +16,7 @@ const Nearbyjobs = () => {
 
   const { data, isLoading, error}= usefetch(
     'search',{
-      query: 'React Developer',
+      query: 'Node Developer',
       num_pages: 1,
     }
   )
@@ -41,9 +41,10 @@ const Nearbyjobs = () => {
            </View>
         ) : (
          data?.map((job) => (
-         <NearbyJobsCard 
-         job={job}ndl
+         <NearbyJobsCard
+         job={job}
          key={`nearby-job-${job?.job_id}`}
+         
          handleNavigate = {() => router.push(`job-details/${job?.job_id}`)}
          />
          ))

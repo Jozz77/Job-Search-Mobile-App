@@ -10,20 +10,10 @@ export default function usefetch(endpoint, query) {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      'X-RapidAPI-Key': '675396d5a1msh0283f142bd8e729p1aca55jsndfe96a02fb35',
+      'X-RapidAPI-Key': '010ab219a5mshcdc6005f6b877f3p1b493djsna2210fcca11b',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
-    params: { ...query },
-    // params: {
-    //   query: 'Python developer in Texas, USA',
-    //   page: 1, // OPTIONAL: Add your desired page number
-    //   num_pages: 1, // OPTIONAL: Add your desired number of pages
-    //   // date_posted: 'all', // OPTIONAL: Add your desired date filter
-    //   // remote_jobs_only: false, // OPTIONAL: Add your desired filter for remote jobs
-    //   // employment_types: 'FULLTIME,CONTRACTOR,PARTTIME,INTERN', // OPTIONAL: Add your desired employment types
-    //   // // Add other optional parameters as needed
-    // },
-  
+    params: { ...query },  
   };
 
   const fetchData = async () => {
