@@ -1,11 +1,21 @@
-import React from "react";
-import { View, Text, TextInput } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from "react-native";
 
 import styles from "./welcome.style";
 import { useRouter } from "expo-router";
+import { SIZES, icons } from "../../../constants";
+
+const jobTypes = [
+  "Full-Time",
+  "Part-Time",
+  "Contractor"
+]
 
 const Welcome = () => {
   const router = useRouter();
+
+  const [activeJobType, setActiveJobType] = useState("Full-Time");
+
   return (
     <View>
       <View style={styles.container}>
@@ -13,11 +23,36 @@ const Welcome = () => {
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
       </View>
 
-
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
-          <TextInput  style={styles.searchInput} />
+          <TextInput
+            style={styles.searchInput}
+            onChange={() => {}}
+            value=""
+            placeholder="What are you looking for?"
+          />
         </View>
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+          <Image source={icons.search} style={styles.searchBtnImage} resizeMode="contain" />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.tabsContainer}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={ {columnGap: SIZES.small}}>
+        {jobTypes.map((item) => (
+          <TouchableOpacity
+            key={item}
+            style={styles.tab(activeJobType, item)}
+            onPress={() => {
+              setActiveJobType(item)
+              router.push(`search/${item}`)
+            }}
+
+          >
+            <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
       </View>
     </View>
   );
