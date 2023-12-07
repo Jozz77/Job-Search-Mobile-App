@@ -10,6 +10,7 @@ import Tabs from "../../components/jobdetails/tabs/Tabs";
 import Specifics from "../../components/jobdetails/specifics/Specifics";
 import About from "../../components/jobdetails/about/About";
 import Footer from "../../components/jobdetails/footer/Footer";
+import { useCallback } from "react";
 
 export default function JobDetails() {
   const params = useSearchParams();
@@ -23,7 +24,11 @@ export default function JobDetails() {
   });
 
   const [refreshing, setRefreshing] = useState(false);
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, [])
 
   const employerName = data?.[0]?.employer_name;
   console.log("Employer Name:", employerName || "N/A");
@@ -55,7 +60,7 @@ export default function JobDetails() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerBackVisible: false,
@@ -64,7 +69,7 @@ export default function JobDetails() {
             <ScreenHeaderBtn
               iconUrl={icons.left}
               dimension="60%"
-              handlePress={() => router.back}
+              handlePress={() => router.back()}
             />
           ),
           headerRight: () => (
@@ -72,7 +77,7 @@ export default function JobDetails() {
           ),
           headerTitle: "",
         }}
-      > */}
+      />
         
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -105,7 +110,6 @@ export default function JobDetails() {
           </ScrollView>
 
           <Footer url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'} />
-      {/* </Stack.Screen> */}
     </SafeAreaView>
   );
 }

@@ -5,6 +5,7 @@ import { COLORS, FONT, SIZES } from "../constants";
 const styles = StyleSheet.create({
     container: {
         width: "100%",
+        position: 'relative',
     },
     searchTitle: {
         fontFamily: FONT.bold,
@@ -21,6 +22,8 @@ const styles = StyleSheet.create({
         marginTop: SIZES.medium
     },
     footerContainer: {
+        position: 'relative',
+        top: 10,
         marginTop: SIZES.small,
         justifyContent: 'center',
         alignItems: 'center',

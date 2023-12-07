@@ -10,7 +10,7 @@ export default function usefetch(endpoint, query) {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      'X-RapidAPI-Key': '010ab219a5mshcdc6005f6b877f3p1b493djsna2210fcca11b',
+      'X-RapidAPI-Key': '4acbd2fba1mshb4e6311fec957e1p1ba3f0jsn43995f5ba698',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
     params: { ...query },  
