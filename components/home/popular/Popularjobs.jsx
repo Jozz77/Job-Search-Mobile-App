@@ -21,7 +21,7 @@ const Popularjobs = () => {
   // const error = false;
 
   const { data, isLoading, error } = usefetch("search", {
-    query: "React Developer",
+    query: "Popular Jobs",
     num_pages: 1,
   });
 

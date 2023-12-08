@@ -19,7 +19,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Hello Jo</Text>
+        <Text style={styles.userName}>Hello Job Seeker</Text>
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
       </View>
 
@@ -29,7 +29,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             style={styles.searchInput}
             onChangeText={(text) => {setSearchTerm(text)}}
             value={searchTerm}
-            placeholder="What are you looking for?"
+            placeholder="What job are you looking for?"
           />
         </View>
         <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>

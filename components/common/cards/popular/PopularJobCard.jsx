@@ -25,7 +25,7 @@ export default function PopularJobCard({item, selectedJob,  handleCardPress}) {
 
       <View style={styles.infoContainer}>
         <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>{item.job_title}</Text>
-        <Text style={styles.location} numberOfLines={1}>{item.job_country}</Text>
+        <Text style={styles.location} numberOfLines={1}>{item.job_city}, {item.job_country}</Text>
       </View>
     </TouchableOpacity>
   )

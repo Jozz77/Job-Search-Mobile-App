@@ -42,6 +42,13 @@ const styles = StyleSheet.create({
     marginTop: 3,
     textTransform: "capitalize",
   },
+  location: {
+    fontSize: SIZES.xSmall + 2,
+    fontFamily: "DMRegular",
+    color: COLORS.gray,
+    marginTop: 3,
+    textTransform: "capitalize",
+  },
 });
 
 export default styles;

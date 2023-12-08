@@ -16,7 +16,7 @@ const Nearbyjobs = () => {
 
   const { data, isLoading, error}= usefetch(
     'search',{
-      query: 'Node Developer',
+      query: 'Nearby Jobs',
       num_pages: 1,
     }
   )

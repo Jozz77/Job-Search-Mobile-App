@@ -25,6 +25,7 @@ export default function NearbyJobsCard({job, handleNavigate}) {
       <View style={styles.textContainer}>
         <Text style={styles.jobName} numberOfLines={3}>{job.job_title}</Text>
         <Text style={styles.jobType} numberOfLines={1}>{job.job_employment_type}</Text>
+        <Text style={styles.location} numberOfLines={1}>{job.job_city}, {job.job_country}</Text>
       </View>
     </TouchableOpacity>
   )
