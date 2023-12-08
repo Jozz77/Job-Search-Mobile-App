@@ -14,6 +14,8 @@ const Nearbyjobs = () => {
   // const isLoading = false;
   // const error = false;
 
+  const showItem= "Nearby Jobs";
+
   const { data, isLoading, error}= usefetch(
     'search',{
       query: 'Nearby Jobs',
@@ -25,7 +27,9 @@ const Nearbyjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={ styles.headerTitle}>Nearby Jobs</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+              router.push(`search/${showItem}`)
+            }}>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>

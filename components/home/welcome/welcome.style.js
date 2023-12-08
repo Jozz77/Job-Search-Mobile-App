@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
     color: COLORS.primary,
-    marginTop: 2,
+    marginTop: 8,
   },
   searchContainer: {
     justifyContent: "center",

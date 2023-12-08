@@ -84,7 +84,7 @@ const JobSearch = () => {
           headerTitle: "",
         }}
       />
-
+      <View style={{ paddingBottom: 30}}>
       <FlatList
         data={searchResult}
         renderItem={({ item }) => (
@@ -108,10 +108,38 @@ const JobSearch = () => {
                 searchError && <Text>Oops something went wrong</Text>
               )}
             </View>
+            
           </>
         )}
-        ListFooterComponent={() => (
-          <View style={styles.footerContainer}>
+        // ListFooterComponent={() => (
+        //   <View style={styles.footerContainer}>
+        //     <TouchableOpacity
+        //       style={styles.paginationButton}
+        //       onPress={() => handlePagination("left")}
+        //     >
+        //       <Image
+        //         source={icons.chevronLeft}
+        //         style={styles.paginationImage}
+        //         resizeMode="contain"
+        //       />
+        //     </TouchableOpacity>
+        //     <View style={styles.paginationTextBox}>
+        //       <Text style={styles.paginationText}>{page}</Text>
+        //     </View>
+        //     <TouchableOpacity
+        //       style={styles.paginationButton}
+        //       onPress={() => handlePagination("right")}
+        //     >
+        //       <Image
+        //         source={icons.chevronRight}
+        //         style={styles.paginationImage}
+        //         resizeMode="contain"
+        //       />
+        //     </TouchableOpacity>
+        //   </View>
+        // )}
+      />
+      <View style={styles.footerContainer}>
             <TouchableOpacity
               style={styles.paginationButton}
               onPress={() => handlePagination("left")}
@@ -136,8 +164,7 @@ const JobSearch = () => {
               />
             </TouchableOpacity>
           </View>
-        )}
-      />
+          </View>
     </SafeAreaView>
   );
 };

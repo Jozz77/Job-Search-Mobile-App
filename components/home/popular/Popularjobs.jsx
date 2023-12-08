@@ -20,6 +20,8 @@ const Popularjobs = () => {
   // const isLoading = false;
   // const error = false;
 
+  const showItem= "Popular  Jobs";
+
   const { data, isLoading, error } = usefetch("search", {
     query: "Popular Jobs",
     num_pages: 1,
@@ -29,7 +31,9 @@ const Popularjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular Jobs</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+              router.push(`search/${showItem}`)
+            }}>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>
